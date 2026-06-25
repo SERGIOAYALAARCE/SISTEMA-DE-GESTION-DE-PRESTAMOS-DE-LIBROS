@@ -1,5 +1,5 @@
 package estructuras;
 
-public class NodoCola {
+public class Cola {
 
 }
