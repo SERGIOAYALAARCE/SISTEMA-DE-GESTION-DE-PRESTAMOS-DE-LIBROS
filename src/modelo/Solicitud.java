@@ -22,4 +22,11 @@ public class Solicitud {
     public int getCodigoLibro() {
         return codigoLibro;
     }
+ // Devuelve la información de la solicitud
+    
+    public String toString() {
+        return codigoEstudiante + " - " + nombreEstudiante
+                + " | Libro: " + codigoLibro
+                + " | Fecha: " + fecha;
+    }
 }
