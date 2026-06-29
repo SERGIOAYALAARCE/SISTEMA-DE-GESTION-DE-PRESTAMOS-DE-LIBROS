@@ -25,5 +25,28 @@ public class ArbolBinarioBusqueda<T extends Comparable<T>> {
 
         return nodo;
     }
+    
+    public T buscar(T dato){
+        return buscar(raiz,dato);
+    }
+
+    private T buscar(NodoArbol<T> nodo,T dato){
+
+        if(nodo==null){
+            return null;
+        }
+
+        int comparacion = dato.compareTo(nodo.dato);
+
+        if(comparacion==0){
+            return nodo.dato;
+        }
+
+        if(comparacion<0){
+            return buscar(nodo.izquierdo,dato);
+        }
+
+        return buscar(nodo.derecho,dato);
+    }
 
 }
