@@ -41,4 +41,12 @@ public class Main {
                 case 7:
                     System.out.println("Programa finalizado.");
                     break;
+                default:
+                    System.out.println("Opción inválida.");
+            }
 
+        }while(opcion!=7);
+
+        sc.close();
+    }
+}
