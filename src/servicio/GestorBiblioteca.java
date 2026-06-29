@@ -30,3 +30,9 @@ public class GestorBiblioteca {
             System.out.println("Solicitud atendida: "+s);
         }
     }
+    public void mostrarReporte(){
+        System.out.println("\\n===== REPORTE =====");
+        System.out.println("Total de libros: "+arbol.contar());
+        System.out.println("Solicitudes pendientes: "+cola.size());
+    }
+}
