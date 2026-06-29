@@ -18,4 +18,8 @@ public class Solicitud {
         this.fecha = fecha;
     }
 
+ // Devuelve el codigo del libro 
+    public int getCodigoLibro() {
+        return codigoLibro;
+    }
 }
