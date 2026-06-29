@@ -23,5 +23,7 @@ public class Main {
                 case 2:
                     gestor.mostrarLibros();
                     break;
-
+                case 3:
+                    System.out.println("Registrar solicitud (se completa en integración).");
+                    break;
 
