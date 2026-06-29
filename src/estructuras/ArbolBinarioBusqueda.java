@@ -62,5 +62,19 @@ public class ArbolBinarioBusqueda<T extends Comparable<T>> {
         }
 
     }
+    
+    public int contar(){
+        return contar(raiz);
+    }
+
+    private int contar(NodoArbol<T> nodo){
+
+        if(nodo==null){
+            return 0;
+        }
+
+        return 1 + contar(nodo.izquierdo) + contar(nodo.derecho);
+    }
+
 
 }
