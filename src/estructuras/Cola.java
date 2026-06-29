@@ -1,7 +1,7 @@
 package estructuras;
 
 public class Cola {
-      private Nodo<T> frente;
+    private Nodo<T> frente;
     private Nodo<T> fin;
     private int tamanio;
 
