@@ -7,7 +7,10 @@ import modelo.Solicitud;
 public class GestorBiblioteca {
   private ArbolBinarioBusqueda<Libro> arbol = new ArbolBinarioBusqueda<>();
     private ColaGenerica<Solicitud> cola = new ColaGenerica<>();
+  
     public void registrarLibro(Libro libro){
         arbol.insertar(libro);
         System.out.println("Libro registrado correctamente.");
 }
+      public void mostrarLibros(){
+        arbol.mostrarInOrden();
