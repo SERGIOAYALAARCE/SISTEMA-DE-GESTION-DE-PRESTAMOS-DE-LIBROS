@@ -19,3 +19,6 @@ public class GestorBiblioteca {
         cola.enqueue(solicitud);
         System.out.println("Solicitud registrada.");
     }
+      public void mostrarSolicitudes(){
+        cola.mostrar();
+    }
