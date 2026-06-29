@@ -7,5 +7,23 @@ public class ArbolBinarioBusqueda<T extends Comparable<T>> {
     public boolean estaVacio(){
         return raiz == null;
     }
+    
+    public void insertar(T dato){
+        raiz = insertar(raiz,dato);
+    }
+
+    private NodoArbol<T> insertar(NodoArbol<T> nodo,T dato){
+        if(nodo==null){
+            return new NodoArbol<>(dato);
+        }
+
+        if(dato.compareTo(nodo.dato)<0){
+            nodo.izquierdo = insertar(nodo.izquierdo,dato);
+        }else if(dato.compareTo(nodo.dato)>0){
+            nodo.derecho = insertar(nodo.derecho,dato);
+        }
+
+        return nodo;
+    }
 
 }
