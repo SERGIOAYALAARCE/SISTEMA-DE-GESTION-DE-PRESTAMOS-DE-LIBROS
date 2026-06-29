@@ -14,3 +14,8 @@ public class GestorBiblioteca {
 }
       public void mostrarLibros(){
         arbol.mostrarInOrden();
+}
+      public void registrarSolicitud(Solicitud solicitud){
+        cola.enqueue(solicitud);
+        System.out.println("Solicitud registrada.");
+    }
