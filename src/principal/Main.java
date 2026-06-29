@@ -20,5 +20,8 @@ public class Main {
                 case 1:
                     System.out.println("Registrar libro (se completa en integración).");
                     break;
+                case 2:
+                    gestor.mostrarLibros();
+                    break;
 
 
