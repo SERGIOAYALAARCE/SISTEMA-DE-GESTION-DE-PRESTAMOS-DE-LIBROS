@@ -75,6 +75,45 @@ public class ArbolBinarioBusqueda<T extends Comparable<T>> {
 
         return 1 + contar(nodo.izquierdo) + contar(nodo.derecho);
     }
+    
+    public void eliminar(T dato){
+        raiz = eliminar(raiz,dato);
+    }
+
+    private NodoArbol<T> eliminar(NodoArbol<T> nodo,T dato){
+
+        if(nodo==null){
+            return null;
+        }
+
+        int comparacion = dato.compareTo(nodo.dato);
+
+        if(comparacion<0){
+            nodo.izquierdo = eliminar(nodo.izquierdo,dato);
+        }else if(comparacion>0){
+            nodo.derecho = eliminar(nodo.derecho,dato);
+        }else{
+
+            if(nodo.izquierdo==null){
+                return nodo.derecho;
+            }
+
+            if(nodo.derecho==null){
+                return nodo.izquierdo;
+            }
+
+            NodoArbol<T> menor = nodo.derecho;
+
+            while(menor.izquierdo!=null){
+                menor = menor.izquierdo;
+            }
+
+            nodo.dato = menor.dato;
+            nodo.derecho = eliminar(nodo.derecho,menor.dato);
+        }
+
+        return nodo;
+    }
 
 
 }
