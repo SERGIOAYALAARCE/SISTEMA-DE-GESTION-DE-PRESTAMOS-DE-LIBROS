@@ -22,3 +22,11 @@ public class GestorBiblioteca {
       public void mostrarSolicitudes(){
         cola.mostrar();
     }
+    public void atenderSolicitud(){
+        Solicitud s=cola.dequeue();
+        if(s==null){
+            System.out.println("No existen solicitudes.");
+        }else{
+            System.out.println("Solicitud atendida: "+s);
+        }
+    }
