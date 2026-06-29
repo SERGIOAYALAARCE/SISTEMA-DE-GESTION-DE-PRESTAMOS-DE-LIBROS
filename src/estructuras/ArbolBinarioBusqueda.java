@@ -48,5 +48,19 @@ public class ArbolBinarioBusqueda<T extends Comparable<T>> {
 
         return buscar(nodo.derecho,dato);
     }
+    
+    public void mostrarInOrden(){
+        inOrden(raiz);
+    }
+
+    private void inOrden(NodoArbol<T> nodo){
+
+        if(nodo!=null){
+            inOrden(nodo.izquierdo);
+            System.out.println(nodo.dato);
+            inOrden(nodo.derecho);
+        }
+
+    }
 
 }
