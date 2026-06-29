@@ -1,22 +1,7 @@
 package modelo;
 
-/**
- * Representa un libro de la biblioteca.
- */
-public class Libro implements Comparable<Libro>{
-
-    private int codigo;
-    private String titulo;
-    private String autor;
-    private String categoria;
-    private int anio;
-    private String estado;
-
-    public Libro(int codigo,String titulo,String autor,String package modelo;
-
-/**
- * Clase que representa un libro dentro del sistema de préstamos.
- */
+ // Clase que representa un libro dentro del sistema de prestamos.
+ 
 public class Libro implements Comparable<Libro> {
 
     // Atributos principales del libro
@@ -27,9 +12,8 @@ public class Libro implements Comparable<Libro> {
     private int anio;
     private String estado;
 
-    /**
-     * Constructor que inicializa los datos del libro.
-     */
+     // Constructor que inicializa los datos del libro.
+     
     public Libro(int codigo, String titulo, String autor, String categoria, int anio, String estado) {
         this.codigo = codigo;
         this.titulo = titulo;
@@ -64,12 +48,29 @@ public class Libro implements Comparable<Libro> {
         return estado;
     }
 
-    /**
-     * Permite cambiar el estado del libro
-     * (Disponible o Prestado).
-     */
+    
+     //Permite cambiar el estado del libro
+      // disponible o prestado .
+     
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
+    
+     // Compara dos libros utilizando el codgio
+     // Este método es utilizado por el arbol binario de busqeda
+     
+    @Override
+    public int compareTo(Libro otro) {
+        return Integer.compare(this.codigo, otro.codigo);
+    }
+
+    
+     // devuelve la información del libro en formato de texto.
+     
+    
+    public String toString() {
+        return codigo + " | " + titulo + " | " + autor + " | "
+                + categoria + " | " + anio + " | " + estado;
+    }
 }
