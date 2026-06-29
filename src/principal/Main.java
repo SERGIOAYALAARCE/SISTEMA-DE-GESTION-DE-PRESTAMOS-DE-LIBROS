@@ -26,4 +26,19 @@ public class Main {
                 case 3:
                     System.out.println("Registrar solicitud (se completa en integración).");
                     break;
+                              case 4:
+                    gestor.mostrarSolicitudes();
+                    break;
+
+                case 5:
+                    gestor.atenderSolicitud();
+                    break;
+
+                case 6:
+                    gestor.mostrarReporte();
+                    break;
+
+                case 7:
+                    System.out.println("Programa finalizado.");
+                    break;
 
