@@ -1,4 +1,4 @@
-package modelo;
+package Librería;
 
  // Clase que representa un libro dentro del sistema de prestamos.
  
