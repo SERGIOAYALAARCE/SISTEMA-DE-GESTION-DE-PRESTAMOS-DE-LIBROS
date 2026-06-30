@@ -1,6 +1,8 @@
 package estructuras;
 
-public class ArbolBinarioBusqueda<T extends Comparable<T>> {
+import java.util.function.Predicate;
+
+public class BinaryTree<T extends Comparable<T>> {
 	
 	private NodoArbol<T> raiz;
 
