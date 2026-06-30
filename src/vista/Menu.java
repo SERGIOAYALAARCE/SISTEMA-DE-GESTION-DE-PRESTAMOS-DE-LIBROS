@@ -118,5 +118,50 @@ public class Menu extends JFrame {
 		crearPanelDevolucion();
 	
 		add(panelCentralCartas, BorderLayout.CENTER);
+		
+		
+		// 5. CONTROL DE NAVEGACION (Eventos de la botonera izquierda)
+		btnNav1.addActionListener(e -> navegadorCartas.show(panelCentralCartas, "PANEL_REGISTRAR"));
+
+		btnNav2.addActionListener(e -> {
+		    navegadorCartas.show(panelCentralCartas, "PANEL_BIENVENIDA");
+		    areaConsola.setText("--- INVENTARIO GENERAL DE LIBROS (IN-ORDEN) ---\n");
+		    gestor.mostrarTodosLosLibros();
+		    areaConsola.append("El inventario completo ha sido impreso en la consola del sistema.");
+		});
+
+		btnNav3.addActionListener(e -> navegadorCartas.show(panelCentralCartas, "PANEL_BUSCAR_CODIGO"));
+
+		btnNav4.addActionListener(e -> navegadorCartas.show(panelCentralCartas, "PANEL_BUSCAR_CAT"));
+
+		btnNav5.addActionListener(e -> navegadorCartas.show(panelCentralCartas, "PANEL_MODIFICAR"));
+
+		btnNav6.addActionListener(e -> navegadorCartas.show(panelCentralCartas, "PANEL_ELIMINAR"));
+
+		btnNav7.addActionListener(e -> navegadorCartas.show(panelCentralCartas, "PANEL_SOLICITUD"));
+
+		btnNav8.addActionListener(e -> {
+		    navegadorCartas.show(panelCentralCartas, "PANEL_BIENVENIDA");
+		    areaConsola.setText("--- COLA DE SOLICITUDES PENDIENTES ---\n");
+		    areaConsola.append(gestor.colaSolicitudesMostrarAuxiliar());
+		});
+
+		btnNav9.addActionListener(e -> {
+		    navegadorCartas.show(panelCentralCartas, "PANEL_BIENVENIDA");
+		    areaConsola.setText("--- PROCESANDO SIGUIENTE SOLICITUD EN COLA ---\n");
+		    String resultado = gestor.atenderSiguienteSolicitud();
+		    areaConsola.append(resultado);
+		});
+
+		btnNav10.addActionListener(e -> navegadorCartas.show(panelCentralCartas, "PANEL_DEVOLUCION"));
+
+		btnNav11.addActionListener(e -> {
+		    navegadorCartas.show(panelCentralCartas, "PANEL_BIENVENIDA");
+		    areaConsola.setText("--- REPORTE ESTADISTICO GENERAL ---\n");
+		    gestor.mostrarReporteGeneral();
+		    areaConsola.append("El reporte general detallado ha sido enviado a la salida estandar.");
+		});
+    }
+    
 
        
