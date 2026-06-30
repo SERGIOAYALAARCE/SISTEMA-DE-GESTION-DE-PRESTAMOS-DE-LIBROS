@@ -101,5 +101,22 @@ public class Menu extends JFrame {
 	    scrollConsola.setPreferredSize(new Dimension(1000, 180));
 	
 	    add(scrollConsola, BorderLayout.SOUTH);
+	    
+		// 4. ZONA CENTRAL: Contenedor de paneles dinamicos (CardLayout)
+		navegadorCartas = new CardLayout();
+		panelCentralCartas = new JPanel(navegadorCartas);
+		panelCentralCartas.setBorder(BorderFactory.createTitledBorder("Panel de Operaciones"));
+	
+		// Creamos y añadimos las "cartas" de formularios al contenedor central
+		crearPanelBienvenida();
+		crearPanelRegistrarLibro();
+		crearPanelBuscarCodigo();
+		crearPanelBuscarCategoria();
+		crearPanelModificarLibro();
+		crearPanelEliminarLibro();
+		crearPanelRegistrarSolicitud();
+		crearPanelDevolucion();
+	
+		add(panelCentralCartas, BorderLayout.CENTER);
 
        
