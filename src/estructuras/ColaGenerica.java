@@ -30,4 +30,8 @@ public class ColaGenerica {
         tamanio--;
         return dato;
     }
+ // Devuelve el primer elemento.
+    public T peek(){
+        return isEmpty()?null:frente.dato;
+    }
 }
