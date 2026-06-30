@@ -16,4 +16,18 @@ public class ColaGenerica {
         }
         tamanio++;
     }
+ // Elimina el primer elemento.
+    public T dequeue(){
+        if(isEmpty()) return null;
+
+        T dato=frente.dato;
+        frente=frente.siguiente;
+
+        if(frente==null){
+            fin=null;
+        }
+
+        tamanio--;
+        return dato;
+    }
 }
