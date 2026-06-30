@@ -59,5 +59,35 @@ public class Menu extends JFrame {
         // Fijamos la dimensión del contenedor del Banner para proteger el espacio de la pantalla
         etiquetaBanner.setPreferredSize(new Dimension(1000, 90));
         add(etiquetaBanner, BorderLayout.NORTH);
+        // 2. ZONA LATERAL IZQUIERDA: Menu de navegacion Grid Layout
+        
+        JPanel panelMenuIzquierdo = new JPanel(new GridLayout(11, 1, 5, 5));
+        panelMenuIzquierdo.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        JButton btnNav1 = new JButton("1. Registrar Libro");
+        JButton btnNav2 = new JButton("2. Mostrar Inventario");
+        JButton btnNav3 = new JButton("3. Buscar por Codigo");
+        JButton btnNav4 = new JButton("4. Buscar por Categoria");
+        JButton btnNav5 = new JButton("5. Modificar Libro");
+        JButton btnNav6 = new JButton("6. Eliminar Libro");
+        JButton btnNav7 = new JButton("7. Registrar Solicitud");
+        JButton btnNav8 = new JButton("8. Mostrar Cola Solicitudes");
+        JButton btnNav9 = new JButton("9. Atender Solicitud (FIFO)");
+        JButton btnNav10 = new JButton("10. Registrar Devolucion");
+        JButton btnNav11 = new JButton("11. Mostrar Reporte");
+
+        panelMenuIzquierdo.add(btnNav1);
+        panelMenuIzquierdo.add(btnNav2);
+        panelMenuIzquierdo.add(btnNav3);
+        panelMenuIzquierdo.add(btnNav4);
+        panelMenuIzquierdo.add(btnNav5);
+        panelMenuIzquierdo.add(btnNav6);
+        panelMenuIzquierdo.add(btnNav7);
+        panelMenuIzquierdo.add(btnNav8);
+        panelMenuIzquierdo.add(btnNav9);
+        panelMenuIzquierdo.add(btnNav10);
+        panelMenuIzquierdo.add(btnNav11);
+
+        add(panelMenuIzquierdo, BorderLayout.WEST);
 
        
