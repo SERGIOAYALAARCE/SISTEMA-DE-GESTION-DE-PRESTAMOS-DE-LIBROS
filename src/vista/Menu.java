@@ -89,5 +89,17 @@ public class Menu extends JFrame {
         panelMenuIzquierdo.add(btnNav11);
 
         add(panelMenuIzquierdo, BorderLayout.WEST);
+        
+        
+        // 3. ZONA INFERIOR: Consola para mensajes y reportes
+	    areaConsola = new JTextArea();
+	    areaConsola.setEditable(false);
+	    areaConsola.setFont(new Font("Monospaced", Font.PLAIN, 12));
+	    areaConsola.setBackground(new Color(245, 245, 245));
+	
+	    JScrollPane scrollConsola = new JScrollPane(areaConsola);
+	    scrollConsola.setPreferredSize(new Dimension(1000, 180));
+	
+	    add(scrollConsola, BorderLayout.SOUTH);
 
        
