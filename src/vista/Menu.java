@@ -1,19 +1,39 @@
 package vista;
 
-public class Menu {
-// Clase encargada de mostrar el menú principal 
-    public static void mostrar(){
-        System.out.println("\\ gestion de prestamos ");
-        // opciones del sistema 
-        
-        System.out.println("1 Registrar libro");
-        System.out.println("2 Mostrar libros");
-        System.out.println("3 Registrar solicitud");
-        System.out.println("4 Mostrar solicitudes");
-        System.out.println("5 Atender solicitud");
-        System.out.println("6. Reporte");
-        System.out.println("7. Salir");
-        System.out.print("Opcion: ");
-    }
-}
+import Libreria.GestorBiblioteca;
+import Libreria.Libro;
+import Busqueda.Solicitudes;
+import estructuras.Cola;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URL;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.net.URL;
+
+public class Menu extends JFrame {
+
+    private GestorBiblioteca gestor;
+    
+    // Componentes principales de la interfaz
+    private JTextArea areaConsola;
+    private JPanel panelCentralCartas;
+    private CardLayout navegadorCartas;
+
+    public Menu(GestorBiblioteca gestor) {
+        this.gestor = gestor;
+        iniciarMusicaFondo();
+
+        // Configuracion basica de la ventana principal
+        setTitle("QuickLibrary - Sistema de Gestion");
+        setSize(1000, 700);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        // Layout principal: Division por zonas
+        setLayout(new BorderLayout(10, 10));
