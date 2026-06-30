@@ -122,6 +122,23 @@ public class BinaryTree<T extends Comparable<T>> { //es importante el comparable
         buscarPorFiltro(raiz, filtro, resultados);
         return resultados;
     }
+    
+    private void buscarPorFiltro(NodoArbol<T> nodo,Predicate<T> filtro, Cola<T> resultados) {
+
+		if (nodo == null) {
+			return;
+		}
+		
+		//recorrido In-Orden (izquierda,raiz,derecha)
+		buscarPorFiltro(nodo.izquierdo, filtro, resultados);
+		
+		//si el dato del nodo cumple con la condicion del filtro, se añade a la cola
+		if (filtro.test(nodo.dato)) {
+			resultados.enqueue(nodo.dato);
+		}
+	
+		buscarPorFiltro(nodo.derecho, filtro, resultados);
+	}
 
 
 }
