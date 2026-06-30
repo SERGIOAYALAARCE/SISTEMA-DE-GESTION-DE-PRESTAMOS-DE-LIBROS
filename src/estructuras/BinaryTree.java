@@ -1,8 +1,8 @@
 package estructuras;
 
-import java.util.function.Predicate;
+import java.util.function.Predicate; //se utiliza principalmente para filtrar datos o evaluar condiciones de manera muy limpia usando expresiones lambda
 
-public class BinaryTree<T extends Comparable<T>> {
+public class BinaryTree<T extends Comparable<T>> { //es importante el comparable porque es mediante esto que el arbol compara
 	
 	private NodoArbol<T> raiz;
 
@@ -115,6 +115,12 @@ public class BinaryTree<T extends Comparable<T>> {
         }
 
         return nodo;
+    }
+    
+    public Cola<T> buscarPorFiltro(Predicate<T> filtro) {
+        Cola<T> resultados = new Cola<>();
+        buscarPorFiltro(raiz, filtro, resultados);
+        return resultados;
     }
 
 
